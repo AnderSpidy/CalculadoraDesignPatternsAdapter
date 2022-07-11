@@ -2,7 +2,7 @@
 
 namespace CalculadoraPOO.ConsoleApp
 {
-    public class Operações
+    public class Operação
     {
        
         public Resultado[] resultados;
@@ -24,7 +24,7 @@ namespace CalculadoraPOO.ConsoleApp
                 if (this.resultados[i] == null)
                 {
                     Resultado resultadoSoma = new Resultado();
-                    resultadoSoma.resultadoOperacao= "A " + i + "º operação: " + primeiroNumeroSoma + " + " + segundoNumeroSoma + " = " + resultado + "\n";
+                    resultadoSoma.resultadoOperacao= "A " + (i+1) + "º operação: " + primeiroNumeroSoma + " + " + segundoNumeroSoma + " = " + resultado + "\n";
                     resultados[i] = resultadoSoma;
                     break;
                 }
@@ -49,14 +49,14 @@ namespace CalculadoraPOO.ConsoleApp
                 if (this.resultados[i] == null)
                 {
                     Resultado resultadoSoma = new Resultado();
-                    resultadoSoma.resultadoOperacao = "A " + i + "º operação: " + primeiroNumeroSubtrair + " - " + segundoNumeroSubtrair + " = " + resultado + "\n";
+                    resultadoSoma.resultadoOperacao = "A " + (i+1) + "º operação: " + primeiroNumeroSubtrair + " - " + segundoNumeroSubtrair + " = " + resultado + "\n";
                     resultados[i] = resultadoSoma;
                     break;
                 }
             }
         }
 
-        public  void Divisão()
+        public void Divisão()
         {
             Console.WriteLine("\n--------------------\n");
             Console.WriteLine("DIVISÃO");
@@ -75,7 +75,7 @@ namespace CalculadoraPOO.ConsoleApp
                     if (this.resultados[i] == null)
                     {
                         Resultado resultadoSoma = new Resultado();
-                        resultadoSoma.resultadoOperacao = "A " + i + "º operação: " + primeiroNumeroDividir + " / " + segundoNumeroDividir + " = " + resultado + "\n";
+                        resultadoSoma.resultadoOperacao = "A " + (i+1) + "º operação: " + primeiroNumeroDividir + " / " + segundoNumeroDividir + " = " + resultado + "\n";
                         resultados[i] = resultadoSoma;
                         break;
                     }
@@ -105,7 +105,7 @@ namespace CalculadoraPOO.ConsoleApp
                 if (this.resultados[i] == null)
                 {
                     Resultado resultadoSoma = new Resultado();
-                    resultadoSoma.resultadoOperacao = "A " + i + "º operação: " + primeiroNumeroMultiplicar + " * " + segundoNumeroMultiplicar + " = " + resultado + "\n";
+                    resultadoSoma.resultadoOperacao = "A " + (i+1) + "º operação: " + primeiroNumeroMultiplicar + " * " + segundoNumeroMultiplicar + " = " + resultado + "\n";
                     resultados[i] = resultadoSoma;
                     break;
                 }
@@ -142,9 +142,5 @@ namespace CalculadoraPOO.ConsoleApp
                 Console.WriteLine("Não é posivel divisão com o numero 0!!!");
             }
         }
-        
-       
-
-        
     }
 }

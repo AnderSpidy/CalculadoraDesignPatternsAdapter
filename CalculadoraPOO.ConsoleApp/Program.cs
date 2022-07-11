@@ -8,9 +8,11 @@ namespace CalculadoraPOO.ConsoleApp
         static void Main(string[] args)
         {
 
-            // ainda quero ver uma implementação do tamanhos dos objetos, para que seja "dinamica"
-            Operações operação = new Operações();
+            Operação operação = new Operação();
             operação.resultados = new Resultado[100];
+
+            //E usado a interface para que usar como "Forma" na instanciação da classe Adapter
+            ITarget target = new OperacaoAdapterHistorico();
             
             string opcao = "";
             while (opcao != "s")
@@ -56,8 +58,8 @@ namespace CalculadoraPOO.ConsoleApp
                         break;
 
                     case "6":
-                        Historico(operação);
-
+                        //utiliza o metodo atravéz da interface adaptadora, que tera as alterações que programou
+                        target.HistoricoVerde(operação);
                         break;
 
                     case "s":
@@ -160,18 +162,6 @@ namespace CalculadoraPOO.ConsoleApp
                 Console.ReadLine();            
             }*/
             #endregion
-        }
-
-        private static void Historico(Operações operação)
-        {
-            for (int i = 0; i < operação.resultados.Length; i++)
-            {
-
-                if (operação.resultados[i] != null)
-                {
-                    Console.WriteLine(operação.resultados[i].resultadoOperacao);
-                }
-            }
         }
     }
 }
